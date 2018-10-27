@@ -1,0 +1,21 @@
+FormatVersion: 2.0.0
+Version: 1.0.0
+Name: Changing IP in config file
+
+Parameters:
+  ip: $ip
+
+Body: |
+  return setup('{0}'.format(args.ip)).stdout
+
+Scripts:
+  setup:
+    Type: Application
+    Version: 1.0.0
+    EntryPoint: master-fogflow.sh
+    Files: []
+
+    Options:
+      captureStdout: true
+      captureStderr: true
+
